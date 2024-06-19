@@ -1,0 +1,32 @@
+{
+  "jsonData" : [
+    {
+      "product": "Mobile",
+      "total": 190000,
+      "children":[
+        {
+          "model" : "Samsung",
+          "price" : 20000
+        },
+        {
+          "model" : "iphone",
+          "price" : 60000
+        }
+      ]
+    },
+    {
+      "product": "Laptop",
+      "total": "83000",
+      "children":[
+        {
+          "model" : "hp",
+          "price" : 40000
+        },
+        {
+          "model" : "dell",
+          "price" : 43000
+        }
+      ]
+    }
+ ]
+}
