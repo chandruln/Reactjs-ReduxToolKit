@@ -11,3 +11,9 @@ data.jsonData.map(item =>
         {item.children.map((sub,i) => 
             --{sub.model}
             --{sub.price}
+
+## Recursive Map
+
+{explorer.items.map((exp) => {
+    return <Folder explorer={exp} key={exp.id}/> 
+})}

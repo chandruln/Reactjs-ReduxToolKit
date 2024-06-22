@@ -19,7 +19,6 @@ export default function Mapprogram() {
     
       return (
         <div>
-          <p>Display products</p>
           <table>
             <tr>
               <th> Product </th>
