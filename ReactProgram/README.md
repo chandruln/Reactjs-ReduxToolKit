@@ -17,3 +17,13 @@ data.jsonData.map(item =>
 {explorer.items.map((exp) => {
     return <Folder explorer={exp} key={exp.id}/> 
 })}
+
+## Pagination
+
+<span onClick={() => setPage(page - 1)}>&laquo;</span>
+{
+    [...Array(products.length / 10)].map((_, index) => {
+        return <span key={index} onClick={() => setPage(index + 1)}> {index + 1} </span>
+    })
+}
+<span onClick={() => setPage(page + 1)}>&raquo;</span>
