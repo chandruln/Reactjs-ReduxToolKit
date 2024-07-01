@@ -4,7 +4,7 @@ import { reducer } from './reducer';
 import Product from './Product';
 import Cart from './Cart';
 
-export default function Main() {
+export default function ShoppingCart() {
 
   const [state, dispatch] = useReducer(reducer, {
     products: [],
