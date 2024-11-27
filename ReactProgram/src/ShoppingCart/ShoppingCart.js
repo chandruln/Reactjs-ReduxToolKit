@@ -14,7 +14,7 @@ export default function ShoppingCart() {
   console.log(state)
 
   const fetchProducts = async () => {
-    const {data} = await axios.get('https://dummyjson.com/products');
+    const {data} = await axios.get('https://dummyjson.com/products?limit=6');
     
     dispatch({
         type:"ADD_PRODUCTS",
