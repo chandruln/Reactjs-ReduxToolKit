@@ -1,0 +1,42 @@
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login__form > h1{
+    font-size: 40px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+.login__form > input{
+    min-width: 380px;
+    padding: 20px 16px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 1px solid black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 2px;
+    font-size: 16px;
+}
+
+.submit_btn{
+    min-width: 380px;
+    padding: 17px 30px;
+    margin-top: 20px;
+    background: black;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 3px;
+}
