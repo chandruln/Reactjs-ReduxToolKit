@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Space, Table, Button, Avatar, Layout, Tag, Form, Typography, Modal, Col, Row, Input  } from 'antd';
 import { LogoutOutlined, SearchOutlined, TableOutlined, UnorderedListOutlined } from '@ant-design/icons';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../LoginRedux/Redux/userSlice';
 
 export default function UserList() {
 
@@ -23,6 +24,14 @@ export default function UserList() {
             setUsers(res.data);
         });
   }, [])
+
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logout())
+  }
 
   const onSearch = (value, _e, info) => console.log(info?.source, value);
 
@@ -93,7 +102,7 @@ export default function UserList() {
         <Header>
             <div style={{display:"flex", justifyContent:"flex-end", alignItems:"end",}}>
                     <Title level={5} type="warning" style={{padding:"0 20px"}}> { " " || users[0].first_name} </Title>
-                    <Button color="danger" variant="solid" style={{margin:"20px"}}> <LogoutOutlined /> </Button>
+                    <Button color="danger" variant="solid" style={{margin:"20px"}} onClick={(e) => handleLogout(e)}> <LogoutOutlined /> </Button>
             </div>
         </Header>
         <Content>      
