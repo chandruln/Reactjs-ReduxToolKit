@@ -3,6 +3,7 @@ import {v4 as uuidv4} from "uuid"
 
 const Todo = () => {
   const [showUpdateTodo, setShowUpdateTodo] = useState({}) 
+  const [todoText, setTodoText] = useState("")
 
   const [todos, setTodos] = useState([
     {
@@ -30,22 +31,61 @@ const toggleTodo = (todoToggle) => {
     setTodos(newTodos);
 }
 
+const addTodo = (todoToAdd) => {
+    setTodos([
+        ...todos, 
+        {
+            id: uuidv4(),
+            name: todoToAdd,
+            checked: false
+        }
+    ])
+}
+
 const updateTodo = (todoUpdate) => {
     setShowUpdateTodo(todoUpdate);
-    console.log(todoUpdate);
+}
+
+const updateTodos = (todotoUpdate) => {
+    setTodos(
+        todos.map((todo) => (
+            todotoUpdate.id == todo.id ? {...todo, name: todotoUpdate.name} : todo
+        ))
+    )
+    setShowUpdateTodo({});
+}
+
+const deleteTodo = (todotodelete) => {
+    setTodos(
+        todos.filter((todo) => todo.id !== todotodelete.id)
+    )
 }
 
   return (
     <div className='todos'>
+        <input value={todoText} onChange={(e) => setTodoText(e.target.value)}/>
+        <button onClick={(e) => addTodo(todoText)}> Add Todo </button>
         {
             todos.map((todo) => (
-                <div className='todos'>
+                <div className='todo'>
                     <input type='checkbox' onChange={() => toggleTodo(todo)} checked={todo.checked}></input>
                     <h1>{todo.name}</h1>
                     <button onClick={() => updateTodo(todo)}>Update</button>
-                    <input></input>
+                    <button onClick={() => deleteTodo(todo)}>Delete</button>                    
                 </div>
             ))
+        }
+        {showUpdateTodo.name ? 
+            (
+                <div>
+                <input style={{display: showUpdateTodo ? "" : "none"}} value={showUpdateTodo ? showUpdateTodo.name : ""} 
+                    onChange={(e) => setShowUpdateTodo({
+                    ...showUpdateTodo, 
+                    name: e.target.value,
+                })} />
+                <button onClick={() => updateTodos(showUpdateTodo)}>Update this todo</button>
+                </div>
+            ) : (" ")
         }
     </div>
   )
