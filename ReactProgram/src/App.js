@@ -17,6 +17,7 @@ import Course from './CourseApp/Course';
 import IndCourse from './CourseApp/IndCourse';
 import AddCourse from './CourseApp/AddCourse';
 import Todo from './TodoApp/Todo';
+import Search from './Search/Search';
 
 export default function App() {
   const [explorerData, setExplorerData] = useState(folderExplorer);
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/addcourse" Component={AddCourse}></Route>
         {/* <Route path="/login" Component={user ? UserList : Login}></Route> */}
         <Route path='/todo' Component={Todo}></Route>
+        <Route path='/search' Component={Search}></Route>
         <Route path="/login" Component={Login}></Route>
         <Route path="/userlist" exact Component={UserList}></Route>
         <Route path="/login1" Component={Login1}></Route>
