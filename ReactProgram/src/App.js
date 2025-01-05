@@ -18,18 +18,19 @@ import IndCourse from './CourseApp/IndCourse';
 import AddCourse from './CourseApp/AddCourse';
 import Todo from './TodoApp/Todo';
 import Search from './Search/Search';
+import InfiniteScroll from './InfinitScroll/InfiniteScroll';
 
 export default function App() {
   const [explorerData, setExplorerData] = useState(folderExplorer);
-  // const user = useSelector(selectUser);
+  const user = useSelector(selectUser);
 
   return (
     <Router>
       <Routes>
-        <Route path="/" Component={Course}></Route>
+        <Route path="/" Component={user ? UserList : Login}></Route>
+        <Route path="/course" Component={Course}></Route>
         <Route path="/course/:id" Component={IndCourse}></Route>
         <Route path="/addcourse" Component={AddCourse}></Route>
-        {/* <Route path="/login" Component={user ? UserList : Login}></Route> */}
         <Route path='/todo' Component={Todo}></Route>
         <Route path='/search' Component={Search}></Route>
         <Route path="/login" Component={Login}></Route>
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/mapprogram" Component={Mapprogram}></Route>
         <Route path="/pagination" Component={Pagination}></Route>
         <Route path="/shoppingcart" Component={ShoppingCart}></Route>
+        <Route path='/scroll' Component={InfiniteScroll}></Route>
       </Routes>
     </Router>
   )
