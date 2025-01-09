@@ -9,6 +9,9 @@ import {Provider} from "react-redux";
 // import store from './CourseApp/Redux/store';
 // import { store } from './Counter/Store';
 import { store } from './Posts/store';
+import { fetchUsers } from './Posts/PostsApiMethod/userApiSlice';
+
+store.dispatch(fetchUsers());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

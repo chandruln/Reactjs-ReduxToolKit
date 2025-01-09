@@ -21,6 +21,7 @@ import Search from './Search/Search';
 import InfiniteScroll from './InfinitScroll/InfiniteScroll';
 import Counter from './Counter/Counter';
 import Posts from './Posts/Posts';
+import PostsApi from './Posts/PostsApiMethod/PostsApi';
 
 export default function App() {
   const [explorerData, setExplorerData] = useState(folderExplorer);
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/addcourse" Component={AddCourse}></Route>
         <Route path='/counter' Component={Counter}></Route>
         <Route path='/posts' Component={Posts}></Route>
+        <Route path='/postsApi' Component={PostsApi}></Route>
       </Routes>
     </Router>
   )
