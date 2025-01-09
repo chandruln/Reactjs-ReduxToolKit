@@ -7,7 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 // import store from "./LoginRedux/Redux/store";
 // import store from './CourseApp/Redux/store';
-import { store } from './Counter/Store';
+// import { store } from './Counter/Store';
+import { store } from './Posts/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

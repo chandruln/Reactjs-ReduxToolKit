@@ -20,6 +20,7 @@ import Todo from './TodoApp/Todo';
 import Search from './Search/Search';
 import InfiniteScroll from './InfinitScroll/InfiniteScroll';
 import Counter from './Counter/Counter';
+import Posts from './Posts/Posts';
 
 export default function App() {
   const [explorerData, setExplorerData] = useState(folderExplorer);
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/course/:id" Component={IndCourse}></Route>
         <Route path="/addcourse" Component={AddCourse}></Route>
         <Route path='/counter' Component={Counter}></Route>
+        <Route path='/posts' Component={Posts}></Route>
       </Routes>
     </Router>
   )

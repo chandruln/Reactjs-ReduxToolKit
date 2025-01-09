@@ -1,0 +1,46 @@
+.body{
+    margin:0%;
+    padding: 0%;
+    box-sizing: border-box; 
+}
+
+.main{
+    /* height: 100vh; */
+    background-color: rgb(196, 246, 248);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.addPostForm{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 10px;
+    padding: 10px;
+    /* background-color: beige; */
+}
+
+.postForm{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* .posts{
+    background-color: rgb(152, 236, 236);
+} */
+
+.post{
+    border: 2px solid grey;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    width: 400px;
+    /* background-color: bisque; */
+}
+
+.title{
+    color: blueviolet;
+}
