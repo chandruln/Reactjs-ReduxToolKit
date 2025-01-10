@@ -1,23 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import App from './App';
+import ShoppingApp from './RTKShoppingCart/ShoppingApp';
+
 import {Provider} from "react-redux";
+
 // import store from "./LoginRedux/Redux/store";
 // import store from './CourseApp/Redux/store';
 // import { store } from './Counter/Store';
-import { store } from './Posts/store';
-import { fetchUsers } from './Posts/PostsApiMethod/userApiSlice';
+// import { store } from './Posts/store';
+// import { fetchUsers } from './Posts/PostsApiMethod/userApiSlice';
 
-store.dispatch(fetchUsers());
+// store.dispatch(fetchUsers());
+
+import { store } from './RTKShoppingCart/store';
+import { productsFetch } from './RTKShoppingCart/productSlice';
+
+store.dispatch(productsFetch());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      {/* <App /> */}
+      <ShoppingApp/>
     </Provider>
   </React.StrictMode>
 );
