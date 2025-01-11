@@ -31,7 +31,7 @@ const productSlice = createSlice({
         .addCase(productsFetch.fulfilled, (state, action) => {
             state.status = "success";
             console.log("productFecth success", action.payload);
-            state.items = action.payload
+            state.items = action.payload.products
         })
         .addCase(productsFetch.rejected, (state, action) => {
             state.status = "rejected";
@@ -41,3 +41,7 @@ const productSlice = createSlice({
 })
 
 export default productSlice.reducer
+
+export const selectAllProducts = (state) => state.products.items;
+export const getProductsStatus = (state) => state.products.status;
+export const getProductsError = (state) => state.products.error;
