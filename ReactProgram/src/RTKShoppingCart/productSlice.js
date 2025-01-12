@@ -11,7 +11,7 @@ export const productsFetch = createAsyncThunk(
     "products/productFetch",
     async () => {
         try {
-            const response = await axios.get(`https://dummyjson.com/products?limit=3`);
+            const response = await axios.get(`https://dummyjson.com/products?limit=12`);
             return response.data
         } catch (err) {
             return err.message

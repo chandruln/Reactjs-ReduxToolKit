@@ -17,8 +17,10 @@ import {Provider} from "react-redux";
 
 import { store } from './RTKShoppingCart/store';
 import { productsFetch } from './RTKShoppingCart/productSlice';
+import { getTotal } from './RTKShoppingCart/cartSlice';
 
 store.dispatch(productsFetch());
+store.dispatch(getTotal());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
