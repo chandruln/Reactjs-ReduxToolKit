@@ -3,31 +3,35 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';
-import ShoppingApp from './RTKShoppingCart/ShoppingApp';
 
 import {Provider} from "react-redux";
+import AppMovie from './RTKMovieList/AppMovie';
 
 // import store from "./LoginRedux/Redux/store";
 // import store from './CourseApp/Redux/store';
 // import { store } from './Counter/Store';
 // import { store } from './Posts/store';
-// import { fetchUsers } from './Posts/PostsApiMethod/userApiSlice';
 
+// import { fetchUsers } from './Posts/PostsApiMethod/userApiSlice';
 // store.dispatch(fetchUsers());
 
-import { store } from './RTKShoppingCart/store';
-import { productsFetch } from './RTKShoppingCart/productSlice';
-import { getTotal } from './RTKShoppingCart/cartSlice';
+// *******  Shopping List APP Required imports and store  *******
+// import ShoppingApp from './RTKShoppingCart/ShoppingApp';
+// import { store } from './RTKShoppingCart/store';
+// import { productsFetch } from './RTKShoppingCart/productSlice';
+// import { getTotal } from './RTKShoppingCart/cartSlice';
+// store.dispatch(productsFetch());
+// store.dispatch(getTotal());
 
-store.dispatch(productsFetch());
-store.dispatch(getTotal());
+import { store } from './RTKMovieList/Redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       {/* <App /> */}
-      <ShoppingApp/>
+      {/* <ShoppingApp/> */}
+      <AppMovie/>
     </Provider>
   </React.StrictMode>
 );
