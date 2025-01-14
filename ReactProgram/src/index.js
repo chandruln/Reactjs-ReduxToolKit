@@ -24,6 +24,8 @@ import AppMovie from './RTKMovieList/AppMovie';
 // store.dispatch(getTotal());
 
 import { store } from './RTKMovieList/Redux/store';
+import { fetchAsyncMovies } from './RTKMovieList/Redux/movieSlice';
+store.dispatch(fetchAsyncMovies())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

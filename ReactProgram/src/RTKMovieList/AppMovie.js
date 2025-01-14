@@ -13,7 +13,7 @@ export default function AppMovie() {
         <div className='container'>
         <Routes>
             <Route path="/" Component={Home}></Route>
-            <Route path="/movie/:imdbID" Component={MovieDetail}></Route>
+            <Route path="/:id" Component={MovieDetail}></Route>
             <Route path="*" Component={PageNotFound}></Route>
         </Routes>
         </div>
